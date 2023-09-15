@@ -1,14 +1,32 @@
+class Player:
+    def play(self):
+        print("The player is playing cricket.")
 
-def is_leap_year(year):
-    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-        return True
-    else:
-        return False
+class Batsman(Player):
+    def play(self):
+        print("The batsman is batting.")
 
-# Input from the user
-year = int(input("Enter a year: "))
+class Bowler(Player):
+    def play(self):
+        print("The bowler is bowling.")
 
-if is_leap_year(year):
-    print(f"{year} is a leap year.")
-else:
-    print(f"{year} is not a leap year.")
+if __name__ == "__main__":
+    while True:
+        print("Choose a player type:")
+        print("1. Batsman")
+        print("2. Bowler")
+        print("3. Exit")
+        
+        choice = input("Enter your choice (1/2/3): ")
+        
+        if choice == "1":
+            batsman = Batsman()
+            batsman.play()
+        elif choice == "2":
+            bowler = Bowler()
+            bowler.play()
+        elif choice == "3":
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please select a valid option.")
